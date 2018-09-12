@@ -1,7 +1,7 @@
 
-int ledPin = 13; //Led no pino 13
-int ldrPin = 0; //LDR no pino analígico 8 int 
-ldrValor = 0; //Valor lido do LDR   
+int ledPin = 9; //Led no pino 13
+int ldrPin = A0; //LDR no pino analígico 8 int 
+int ldrValor = 0; //Valor lido do LDR   
 
 void setup() {  
   pinMode(ledPin,OUTPUT); //define a porta 7 como saída  
@@ -13,10 +13,10 @@ void loop() {
     ldrValor = analogRead(ldrPin); //ler o valor do LDR
     //O valor lido será entre 0 e 1023    
     
-    if (ldrValor>= 800){ //se o valor lido for maior ou igual à 800, liga o led 
+    if (ldrValor>= 400){ //se o valor lido for maior ou igual à 800, liga o led 
       digitalWrite(ledPin,HIGH);  // senão, apaga o led  
     }else{ 
-      digitalWrite(ledPin,LOW);    //imprime o valor lido do LDR no monitor serial  
+      //digitalWrite(ledPin,LOW);    //imprime o valor lido do LDR no monitor serial  
     }
     
     Serial.println(ldrValor);  
