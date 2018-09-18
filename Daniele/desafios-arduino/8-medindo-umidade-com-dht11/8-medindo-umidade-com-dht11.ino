@@ -1,3 +1,6 @@
+/*
+ * H. Medir umidade através do DHT11;
+ */
 #include <dht.h> // Inclui a biblioteca no seu código   
 
 dht DHT; // Cria um objeto da classe dht uint32_t 
@@ -13,12 +16,9 @@ void loop() {
     DHT.read11(A1); // chama método de leitura da classe dht,                     
     // com o pino de transmissão de dados ligado no pino A1       
         
-    
+    Serial.print("Umidade: ");
     Serial.print(DHT.humidity);   // Exibe na serial o valor de umidade   
-    Serial.println(" %");            
-    Serial.print(DHT.temperature);     // Exibe na serial o valor da temperatura
-    Serial.println(" Celsius");       
+    Serial.println(" %");                  
     timer = millis(); // Atualiza a referência 
   }
 }
-
